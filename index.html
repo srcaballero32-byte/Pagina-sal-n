@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salón de Belleza</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .galeria-principal {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .galeria-principal .corte {
+      flex: 1 1 30%;
+      background-color: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .galeria-principal img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .mas-trabajos {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .mas-trabajo {
+      display: flex;
+      gap: 20px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .mas-trabajo img {
+      width: 30%;
+      border-radius: 8px;
+    }
+
+    .contacto {
+      background-color: #eee;
+      padding: 40px 20px;
+    }
+
+    .contacto h2 {
+      margin-top: 0;
+    }
+
+    .info-personal {
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Salón de Belleza Elegante</h1>
+    <p>Estilo, confianza y profesionalismo</p>
+  </header>
+
+  <section id="principal">
+    <h2>Cortes Populares</h2>
+    <div class="galeria-principal">
+      <div class="corte">
+        <img src="https://via.placeholder.com/300x200" alt="Corte 1">
+        <p>Corte Clásico para Caballero</p>
+      </div>
+      <div class="corte">
+        <img src="https://via.placeholder.com/300x200" alt="Corte 2">
+        <p>Corte en Capas para Dama</p>
+      </div>
+      <div class="corte">
+        <img src="https://via.placeholder.com/300x200" alt="Corte 3">
+        <p>Corte Infantil Creativo</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mas-trabajos">
+    <h2>Más Trabajos</h2>
+    <div class="mas-trabajos">
+      <div class="mas-trabajo">
+        <img src="https://via.placeholder.com/300x200" alt="Trabajo 1">
+        <p>Peinados de gala realizados en eventos recientes.</p>
+      </div>
+      <div class="mas-trabajo">
+        <img src="https://via.placeholder.com/300x200" alt="Trabajo 2">
+        <p>Coloraciones personalizadas y tendencias actuales.</p>
+      </div>
+      <div class="mas-trabajo">
+        <img src="https://via.placeholder.com/300x200" alt="Trabajo 3">
+        <p>Tratamientos capilares y alisados profesionales.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <h2>Contáctanos</h2>
+    <p><strong>Dirección:</strong> Calle Belleza #123, Ciudad</p>
+    <p><strong>Teléfono:</strong> +52 123 456 7890</p>
+    <p><strong>Email:</strong> contacto@salonelegante.com</p>
+
+    <div class="info-personal">
+      <h3>Sobre Nosotros</h3>
+      <p>En Salón de Belleza Elegante, contamos con más de 10 años de experiencia. Nuestro equipo está formado por estilistas certificados, apasionados por brindar un servicio de calidad y atención personalizada.</p>
+    </div>
+  </section>
+
+</body>
+</html>
