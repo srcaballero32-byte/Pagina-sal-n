@@ -1,90 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Salón de Belleza</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Salón de Belleza Elegante</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
+    :root {
+      --color-primario: #111;
+      --color-secundario: #f8f8f8;
+      --color-acento: #d49f9f;
+      --color-texto: #333;
+      --sombra: rgba(0, 0, 0, 0.1);
+      --radio-borde: 8px;
+      --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: var(--fuente-principal);
       margin: 0;
       padding: 0;
+      background-color: var(--color-secundario);
+      color: var(--color-texto);
       line-height: 1.6;
-      background-color: #f8f8f8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     header {
-      background-color: #111;
+      background-color: var(--color-primario);
       color: white;
-      padding: 40px 20px;
+      padding: 3rem 1rem;
       text-align: center;
+      box-shadow: 0 2px 6px var(--sombra);
     }
 
     header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    header p {
       margin: 0;
-      font-size: 3em;
+      font-size: 1.25rem;
+      font-style: italic;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
     section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+      margin-bottom: 4rem;
     }
 
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid var(--color-acento);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      color: var(--color-primario);
+    }
+
+    /* Galería Principal */
     .galeria-principal {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
-    .galeria-principal .corte {
-      flex: 1 1 30%;
-      background-color: white;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    .corte {
+      background: white;
+      padding: 1rem;
+      border-radius: var(--radio-borde);
+      box-shadow: 0 2px 8px var(--sombra);
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .corte:hover,
+    .corte:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px var(--sombra);
+      outline: none;
     }
 
-    .galeria-principal img {
+    .corte img {
       width: 100%;
-      border-radius: 8px;
+      height: auto;
+      border-radius: var(--radio-borde);
+      margin-bottom: 0.75rem;
+      object-fit: cover;
     }
 
+    .corte p {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0;
+      color: var(--color-primario);
+    }
+
+    /* Más trabajos */
     .mas-trabajos {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 1.5rem;
     }
 
     .mas-trabajo {
       display: flex;
-      gap: 20px;
-      background-color: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      gap: 1rem;
+      background: white;
+      border-radius: var(--radio-borde);
+      box-shadow: 0 2px 8px var(--sombra);
+      padding: 1rem;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+    }
+    .mas-trabajo:hover,
+    .mas-trabajo:focus-within {
+      box-shadow: 0 8px 15px var(--sombra);
+      outline: none;
     }
 
     .mas-trabajo img {
-      width: 30%;
-      border-radius: 8px;
+      width: 35%;
+      border-radius: var(--radio-borde);
+      object-fit: cover;
+      flex-shrink: 0;
     }
 
+    .mas-trabajo p {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--color-texto);
+      font-weight: 500;
+    }
+
+    /* Contacto */
     .contacto {
-      background-color: #eee;
-      padding: 40px 20px;
+      background-color: #f0f0f0;
+      padding: 3rem 1rem;
+      border-radius: var(--radio-borde);
+      box-shadow: 0 2px 10px var(--sombra);
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      color: var(--color-primario);
     }
 
     .contacto h2 {
       margin-top: 0;
+      text-align: center;
+    }
+
+    .contacto p {
+      margin: 0.6rem 0;
+      font-size: 1.1rem;
     }
 
     .info-personal {
-      margin-top: 20px;
+      margin-top: 2rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--color-texto);
     }
 
+    /* Botón contacto */
+    .boton-contacto {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto 0 auto;
+      background-color: var(--color-primario);
+      color: white;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: var(--radio-borde);
+      box-shadow: 0 4px 8px var(--sombra);
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .boton-contacto:hover,
+    .boton-contacto:focus {
+      background-color: #333;
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .mas-trabajo {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .mas-trabajo img {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -94,53 +218,57 @@
     <p>Estilo, confianza y minimalismo</p>
   </header>
 
-  <section id="principal">
-    <h2>Cortes Populares</h2>
-    <div class="galeria-principal">
-      <div class="corte">
-        <img src="https://via.placeholder.com/300x200" alt="Corte 1">
-        <p>Corte Clásico para Caballero</p>
+  <main>
+    <section id="principal" aria-label="Cortes populares">
+      <h2>Cortes Populares</h2>
+      <div class="galeria-principal">
+        <article class="corte" tabindex="0">
+          <img src="https://via.placeholder.com/300x200?text=Corte+Clásico+para+Caballero" alt="Corte Clásico para Caballero" />
+          <p>Corte Clásico para Caballero</p>
+        </article>
+        <article class="corte" tabindex="0">
+          <img src="https://via.placeholder.com/300x200?text=Corte+en+Capas+para+Dama" alt="Corte en Capas para Dama" />
+          <p>Corte en Capas para Dama</p>
+        </article>
+        <article class="corte" tabindex="0">
+          <img src="https://via.placeholder.com/300x200?text=Cortes+Clásicos" alt="Cortes Clásicos" />
+          <p>Cortes Clásicos</p>
+        </article>
       </div>
-      <div class="corte">
-        <img src="https://via.placeholder.com/300x200" alt="Corte 2">
-        <p>Corte en Capas para Dama</p>
-      </div>
-      <div class="corte">
-        <img src="https://via.placeholder.com/300x200" alt="Corte 3">
-        <p>Cortes clasicos</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="mas-trabajos">
-    <h2>Más Trabajos</h2>
-    <div class="mas-trabajos">
-      <div class="mas-trabajo">
-        <img src="https://via.placeholder.com/300x200" alt="Trabajo 1">
-        <p>Peinados realizados recientemente.</p>
+    <section id="mas-trabajos" aria-label="Más trabajos realizados">
+      <h2>Más Trabajos</h2>
+      <div class="mas-trabajos">
+        <article class="mas-trabajo" tabindex="0">
+          <img src="https://via.placeholder.com/300x200?text=Peinados+Recientes" alt="Peinados realizados recientemente" />
+          <p>Peinados realizados recientemente.</p>
+        </article>
+        <article class="mas-trabajo" tabindex="0">
+          <img src="https://via.placeholder.com/300x200?text=Recomendaciones+y+Apoyo+Visual" alt="Recomendaciones y apoyo visual" />
+          <p>Recomendaciones y apoyo visual.</p>
+        </article>
+        <article class="mas-trabajo" tabindex="0">
+          <img src="https://via.placeholder.com/300x200?text=Tratamientos+Capilares" alt="Tratamientos capilares y alisados profesionales" />
+          <p>Tratamientos capilares y alisados profesionales.</p>
+        </article>
       </div>
-      <div class="mas-trabajo">
-        <img src="https://via.placeholder.com/300x200" alt="Trabajo 2">
-        <p>Recomendaciones y apoyo visual.</p>
-      </div>
-      <div class="mas-trabajo">
-        <img src="https://via.placeholder.com/300x200" alt="Trabajo 3">
-        <p>Tratamientos capilares y alisados profesionales.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contacto" id="contacto">
-    <h2>Contáctanos</h2>
-    <p><strong>Dirección:</strong> Calle Belleza #123, Ciudad</p>
-    <p><strong>Teléfono:</strong> +52 123 456 7890</p>
-    <p><strong>Email:</strong> contacto@salonelegante.com</p>
+    <section class="contacto" id="contacto" aria-label="Contacto">
+      <h2>Contáctanos</h2>
+      <p><strong>Dirección:</strong> Calle Belleza #123, Ciudad</p>
+      <p><strong>Teléfono:</strong> <a href="tel:+521234567890" aria-label="Teléfono: 52 123 456 7890">+52 123 456 7890</a></p>
+      <p><strong>Email:</strong> <a href="mailto:contacto@salonelegante.com">contacto@salonelegante.com</a></p>
 
-    <div class="info-personal">
-      <h3>Sobre Nosotros</h3>
-      <p>En Salón de Belleza Elegante, contamos con más de 10 años de experiencia. Nuestro equipo está formado por estilistas certificados, apasionados por brindar un servicio de calidad y atención personalizada.</p>
-    </div>
-  </section>
+      <a href="mailto:contacto@salonelegante.com" class="boton-contacto" aria-label="Enviar correo a Salón de Belleza Elegante">Escríbenos</a>
+
+      <div class="info-personal">
+        <h3>Sobre Nosotros</h3>
+        <p>En Salón de Belleza Elegante, contamos con más de 10 años de experiencia. Nuestro equipo está formado por estilistas certificados, apasionados por brindar un servicio de calidad y atención personalizada.</p>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
